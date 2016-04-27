@@ -1,0 +1,11 @@
+/*
+Student
+├──── HighSchool
+└──── PrimarySchool
+      ├──── YellowTagged
+      │     ├──── Genius
+      │     └──── Brainiac
+      └──── RedTagged
+            ├──── Wicked
+            └──── Fighter
+*/

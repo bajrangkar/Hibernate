@@ -22,13 +22,20 @@ public class Customer {
 	@Id
 //	@SequenceGenerator(name = "sg", sequenceName = "Juzzy_Mango", initialValue = 100, allocationSize = 5)
 //	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sg")
+	
 	@GenericGenerator(name = "ss", strategy = "com.annotation.util.GenNow",
 	parameters={
 			@Parameter(name="startAt", value="1001"),
-			@Parameter(name="gap", value="100")
+			@Parameter(name="gap", value="100"),
+			@Parameter(name="tablename", value="CUSTOMER_JUZZY_MANGO"),
+			@Parameter(name="prefix", value="CUST"),
+			@Parameter(name="suffix", value="!")
 		}
 	)
 	@GeneratedValue(generator = "ss")
+	
+//	@GenericGenerator(name = "ss", strategy="increment")
+//	@GeneratedValue(generator = "ss")
 	@Column(name = "cid")
 	private String cid;
 

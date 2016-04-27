@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import com.annotation.domain.Customer;
+import com.annotation.domain.Seller;
 import com.annotation.util.HibernateUtil;
 
 /**
@@ -15,6 +16,13 @@ public class H04Client {
 	public static void main(String args[]) {
 		H04Client h1 = new H04Client();
 		h1.runOne();
+		h1.runOnceSeller();
+
+		h1.runOnceSeller();
+		h1.runOnceSeller();
+		h1.runOnceSeller();
+		h1.runOnceSeller();
+		h1.runOnceSeller();
 		h1.runTheMethod();
 		h1.runTheMethod();
 		h1.runTheMethod();
@@ -24,6 +32,11 @@ public class H04Client {
 		h2.runTheMethod();
 		h2.runTheMethod();
 		h2.runTheMethod();
+		h1.runOnceSeller();
+		h1.runOnceSeller();
+		h1.runOnceSeller();
+		h1.runOnceSeller();
+		h1.runOnceSeller();
 		System.exit(0);
 	}
 	
@@ -51,7 +64,8 @@ public class H04Client {
 					case 9 : cust1 = new Customer("Subramanya");	break;
 					default : cust1 = new Customer("Mr. Impossible");
 				}
-				String in1 = (String)session.save(cust1);
+//				String in1 = (String)
+				session.save(cust1);
 //				System.out.println(in1);
 				tx.commit();
 			} catch (Exception e) {
@@ -97,7 +111,8 @@ public class H04Client {
 			session = fact.openSession();
 			tx = session.beginTransaction();
 			Customer cust1 = new Customer("Bajrang");
-			String in1 = (String)session.save(cust1);
+//			String in1 = (String)
+			session.save(cust1);
 //			System.out.println(in1);
 			tx.commit();
 		} catch (Exception e) {
@@ -105,4 +120,18 @@ public class H04Client {
 		}
 	}
 	
+	public void runOnceSeller() {
+		try {
+			fact = HibernateUtil.getSessionFactory();
+			session = fact.openSession();
+			tx = session.beginTransaction();
+			Seller sell1 = new Seller("Palak");
+//			String in1 = (String)
+			session.save(sell1);
+//			System.out.println(in1);
+			tx.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

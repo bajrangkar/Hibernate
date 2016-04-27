@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM 
+"file:\\\D:\lib\hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hibernate.simple">
+	<class name="Customer" table="cust">
+		<id name="cid" column="cid" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="cname" type="string" column="cname"/>
+	</class>
+</hibernate-mapping>

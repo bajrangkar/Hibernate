@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM 
+"file:\\\D:\lib\hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hibernate.inheritance">
+	<!-- Table Per Subclass Inheritance Mapping -->
+	<class name="Student" table="1student">
+		<id name="sroll" column="sroll" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="sname" column="sname" type="string" />
+		<property name="gender" column="gender" type="string" />
+		<joined-subclass name="HighSchool" table="1hschool">
+			<key column="sroll" />
+			<property name="hroll" column="hroll" type="int" />
+			<property name="game" column="game" type="string" />
+			<property name="hname" column="hname" type="string" />
+			<property name="arrestcount" column="acount" type="int" />
+		</joined-subclass>
+		<joined-subclass name="PrimarySchool" table="1pschool">
+			<key column="sroll" />
+			<property name="proll" column="proll" type="int" />
+			<property name="beltcolor" column="bcolor" type="string" />
+			<property name="tiecolor" column="tcolor" type="string" />
+			<joined-subclass name="YellowTagged" table="1ytagged">
+				<key column="sroll" />
+				<property name="yroll" column="yroll" type="int" />
+				<property name="yname" column="yname" type="string" />
+				<property name="bookworm" column="bworm" type="boolean" />
+				<property name="iq" column="eyequeue" type="int" />
+				<joined-subclass name="Genius" table="1genius">
+					<key column="sroll" />
+					<property name="getDumpedCount" column="gdcount" type="int" />
+					<property name="crushCount" column="crush" type="int" />
+					<property name="crashCount" column="crash" type="int" />
+				</joined-subclass>
+				<joined-subclass name="Brainiac" table="1brainiac">
+					<key column="sroll" />
+					<property name="readBookCount" column="rbcount" type="long" />
+					<property name="yellowTeethCount" column="ytcount" type="int" />
+					<property name="getBeatenByFightersCount" column="gbbf"
+						type="long" />
+				</joined-subclass>
+			</joined-subclass>
+			<joined-subclass name="RedTagged" table="1rtagged">
+				<key column="sroll" />
+				<property name="rcount" column="rcount" type="int" />
+				<property name="fname" column="fname" type="string" />
+				<property name="fightfought" column="ff" type="int" />
+				<property name="toothbroken" column="tb" type="int" />
+				<joined-subclass name="Wicked" table="1wicked">
+					<key column="sroll" />
+					<property name="speciality" column="spec" type="string" />
+					<property name="fightOrganised" column="fo" type="int" />
+					<property name="getCaught" column="caught" type="int" />
+					<property name="successRate" column="sexrate" type="int" />
+				</joined-subclass>
+				<joined-subclass name="Fighter" table="1fight">
+					<key column="sroll" />
+					<property name="punchCount" column="punch" type="int" />
+					<property name="kickCount" column="kick" type="int" />
+					<property name="beatenBrianiacCount" column="bbc" type="int" />
+					<property name="beatenGeniusCount" column="bgc" type="int" />
+				</joined-subclass>
+			</joined-subclass>
+		</joined-subclass>
+	</class>
+</hibernate-mapping>

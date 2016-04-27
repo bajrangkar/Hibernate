@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM 
+"file:\\\D:\lib\hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hibernate.association">
+	<class name="Student" table="student" lazy="false">
+		<id name="sid" column="sid" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="sname" column="sname" type="string" />
+		
+		<!-- One To One - Primary Key - Bidirectional -->
+		<one-to-one name="nick"/>
+		
+		<!-- One To One - Foreign Key - Bidirectional -->
+		<many-to-one name="address" class="Address" column="adid" unique="true" />
+		
+		<!-- Many To One/One To Many - Bidirectional -->
+		<many-to-one name="school" class="School" column="schid" />
+		
+		<!-- Many To Many - Bidirectional -->
+		<!-- Should be above join tags -->
+     	<set name="accounts" table="student_account">
+     		<key column="sid"/>
+     		<many-to-many column="acctId" class="Account"/>
+     	</set>
+     	
+     	<!-- One To One - Join Table - Bidirectional -->
+		<join table="student_bike">
+   			<key column="sid" unique="true" />
+   			<many-to-one name="bike" column="bikeId" unique="true" />
+  		</join>
+  		
+  		<!-- Many To One/One To Many - Join Table - Bidirectional -->
+  		<join table="student_game" optional="true">
+     		<key column="sid"/>
+     		<many-to-one name="game" column="gameId"/>
+     	</join>
+	</class>
+	
+	<class name="Nick" table="nick" lazy="false">
+		<id name="nid" column="nid" type="int">
+          <generator class="increment" />
+		</id>
+		<property name="nickName" column="nickName" type="string" />
+		
+		<!-- One To One - Primary Key - Bidirectional -->
+		<one-to-one name="student"/>
+	</class>
+	
+	<class name="Address" table="address" lazy="false">
+		<id name="adid" column="adid" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="street" column="street" type="string" />
+		<property name="city" column="city" type="string" />
+		<property name="state" column="state" type="string" />
+		
+		<!-- One To One - Foreign Key - Bidirectional -->
+		<one-to-one name="student" class="Student" property-ref="address"/>
+	</class>
+	
+	<class name="School" table="school" lazy="false">
+		<id name="schid" column="schid" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="name" column="name" type="string" />
+		<property name="estbYear" column="estbYear" type="string" />
+		
+		<!-- Many To One/One To Many - Bidirectional -->
+		<set name="students">
+			<key column="schid"/>
+			<one-to-many class="Student"/>
+		</set>
+	</class>
+	
+	<class name="Bike" table="bike" lazy="false">
+		<id name="bikeId" column="bikeId" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="bikeNo" column="bikeNo" type="string" />
+		<property name="bikeBrand" column="bikeBrand" type="string" />
+		<property name="bikeMfd" column="bikeMfd" type="string"/>
+		
+		<!-- One To One - Join Table - Bidirectional -->
+  		<join table="student_bike" optional="true" inverse="true">
+			<key column="bikeId" unique="true"/>
+			<many-to-one name="student" column="sid" unique="true"/>
+		</join>  
+	</class>
+	
+	<class name="Game" table="game" lazy="false">
+		<id name="gameId" column="gameId" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="gameName" column="gameName" type="string" />
+		<property name="gamePosition" column="gamePosition" type="string" />
+		
+		<!-- Many To One/One To Many - Join Table - Bidirectional -->
+		<set name="students" table="student_game" inverse="true">
+  			<key column="gameId"/>
+  			<many-to-many column="sid" class="Student"/>
+  		</set>
+	</class>
+	
+	<class name="Account" table="account" lazy="false">
+		<id name="acctId" column="acctId" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="acctType" column="acctType" type="string" />
+		<property name="contacts" column="contacts" type="int" />
+		
+		<!-- Many To Many - Bidirectional -->
+		<set name="students" table="student_account">
+			<key column="acctId"/>
+			<many-to-many column="sid" class="Student"/>
+		</set>
+	</class>
+</hibernate-mapping>

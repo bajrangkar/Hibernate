@@ -1,4 +1,4 @@
-package com.annotation.domain;
+package com.annotation.simple;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

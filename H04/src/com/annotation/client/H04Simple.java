@@ -4,17 +4,17 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import com.annotation.domain.Customer;
-import com.annotation.domain.Seller;
+import com.annotation.simple.Customer;
+import com.annotation.simple.Seller;
 import com.annotation.util.HibernateUtil;
 
 /**
  * Client code to demonstrate persistence of domain class having Simple datatypes
  * @author bkar
  */
-public class H04Client {
+public class H04Simple {
 	public static void main(String args[]) {
-		H04Client h1 = new H04Client();
+		H04Simple h1 = new H04Simple();
 		h1.runOne();
 		h1.runOnceSeller();
 
@@ -27,7 +27,7 @@ public class H04Client {
 		h1.runTheMethod();
 		h1.runTheMethod();
 		h1.runTheMethod();
-		H04Client h2 = new H04Client();
+		H04Simple h2 = new H04Simple();
 		h2.runTheMethod();
 		h2.runTheMethod();
 		h2.runTheMethod();

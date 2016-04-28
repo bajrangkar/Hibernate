@@ -4,23 +4,44 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import com.annotation.inheritance.table_per_subclass.Brainiac;
-import com.annotation.inheritance.table_per_subclass.Fighter;
-import com.annotation.inheritance.table_per_subclass.Genius;
-import com.annotation.inheritance.table_per_subclass.HighSchool;
-import com.annotation.inheritance.table_per_subclass.PrimarySchool;
-import com.annotation.inheritance.table_per_subclass.RedTagged;
-import com.annotation.inheritance.table_per_subclass.Student;
-import com.annotation.inheritance.table_per_subclass.Wicked;
-import com.annotation.inheritance.table_per_subclass.YellowTagged;
+import com.annotation.inheritance.table_per_concreteclass.Brainiac;
+import com.annotation.inheritance.table_per_concreteclass.Fighter;
+import com.annotation.inheritance.table_per_concreteclass.Genius;
+import com.annotation.inheritance.table_per_concreteclass.HighSchool;
+import com.annotation.inheritance.table_per_concreteclass.PrimarySchool;
+import com.annotation.inheritance.table_per_concreteclass.RedTagged;
+import com.annotation.inheritance.table_per_concreteclass.Student;
+import com.annotation.inheritance.table_per_concreteclass.Wicked;
+import com.annotation.inheritance.table_per_concreteclass.YellowTagged;
+
+//import com.annotation.inheritance.table_per_class.Brainiac;
+//import com.annotation.inheritance.table_per_class.Fighter;
+//import com.annotation.inheritance.table_per_class.Genius;
+//import com.annotation.inheritance.table_per_class.HighSchool;
+//import com.annotation.inheritance.table_per_class.PrimarySchool;
+//import com.annotation.inheritance.table_per_class.RedTagged;
+//import com.annotation.inheritance.table_per_class.Student;
+//import com.annotation.inheritance.table_per_class.Wicked;
+//import com.annotation.inheritance.table_per_class.YellowTagged;
+
+//import com.annotation.inheritance.table_per_subclass.Brainiac;
+//import com.annotation.inheritance.table_per_subclass.Fighter;
+//import com.annotation.inheritance.table_per_subclass.Genius;
+//import com.annotation.inheritance.table_per_subclass.HighSchool;
+//import com.annotation.inheritance.table_per_subclass.PrimarySchool;
+//import com.annotation.inheritance.table_per_subclass.RedTagged;
+//import com.annotation.inheritance.table_per_subclass.Student;
+//import com.annotation.inheritance.table_per_subclass.Wicked;
+//import com.annotation.inheritance.table_per_subclass.YellowTagged;
+
 import com.annotation.util.HibernateUtil;
 
 /**
  * Client code to demonstrate persistence of domain classes having Inheritance using 
  * 
- * 1> Table Per Subclass Inheritance Mapping 		- Add student1.hbm.xml in cfg file
- * 2> Table Per Class Inheritance Mapping 			- Add student2.hbm.xml in cfg file
- * 3> Table Per Concrete Class Inheritance Mapping 	- Add student3.hbm.xml in cfg file
+ * 1> Table Per Subclass Inheritance Mapping 		- Change import classes in this file to run
+ * 2> Table Per Class Inheritance Mapping 			- Change import classes in this file to run
+ * 3> Table Per Concrete Class Inheritance Mapping 	- Change import classes in this file to run
  * @author bkar
  *
  */

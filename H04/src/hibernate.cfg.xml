@@ -13,6 +13,27 @@
 		<mapping class="com.annotation.simple.Customer"/>
 		<mapping class="com.annotation.simple.Seller"/>
 		<mapping class="com.annotation.collection.Student"/>
+		
+		<mapping class="com.annotation.inheritance.table_per_concreteclass.Student"/>
+		<mapping class="com.annotation.inheritance.table_per_concreteclass.HighSchool"/>
+		<mapping class="com.annotation.inheritance.table_per_concreteclass.PrimarySchool"/>
+		<mapping class="com.annotation.inheritance.table_per_concreteclass.YellowTagged"/>
+		<mapping class="com.annotation.inheritance.table_per_concreteclass.Genius"/>
+		<mapping class="com.annotation.inheritance.table_per_concreteclass.Brainiac"/>
+		<mapping class="com.annotation.inheritance.table_per_concreteclass.RedTagged"/>
+		<mapping class="com.annotation.inheritance.table_per_concreteclass.Wicked"/>
+		<mapping class="com.annotation.inheritance.table_per_concreteclass.Fighter"/>
+		
+		<mapping class="com.annotation.inheritance.table_per_class.Student"/>
+		<mapping class="com.annotation.inheritance.table_per_class.HighSchool"/>
+		<mapping class="com.annotation.inheritance.table_per_class.PrimarySchool"/>
+		<mapping class="com.annotation.inheritance.table_per_class.YellowTagged"/>
+		<mapping class="com.annotation.inheritance.table_per_class.Genius"/>
+		<mapping class="com.annotation.inheritance.table_per_class.Brainiac"/>
+		<mapping class="com.annotation.inheritance.table_per_class.RedTagged"/>
+		<mapping class="com.annotation.inheritance.table_per_class.Wicked"/>
+		<mapping class="com.annotation.inheritance.table_per_class.Fighter"/>
+		
 		<mapping class="com.annotation.inheritance.table_per_subclass.Student"/>
 		<mapping class="com.annotation.inheritance.table_per_subclass.HighSchool"/>
 		<mapping class="com.annotation.inheritance.table_per_subclass.PrimarySchool"/>

@@ -13,5 +13,14 @@
 		<mapping class="com.annotation.simple.Customer"/>
 		<mapping class="com.annotation.simple.Seller"/>
 		<mapping class="com.annotation.collection.Student"/>
+		<mapping class="com.annotation.inheritance.table_per_subclass.Student"/>
+		<mapping class="com.annotation.inheritance.table_per_subclass.HighSchool"/>
+		<mapping class="com.annotation.inheritance.table_per_subclass.PrimarySchool"/>
+		<mapping class="com.annotation.inheritance.table_per_subclass.YellowTagged"/>
+		<mapping class="com.annotation.inheritance.table_per_subclass.Genius"/>
+		<mapping class="com.annotation.inheritance.table_per_subclass.Brainiac"/>
+		<mapping class="com.annotation.inheritance.table_per_subclass.RedTagged"/>
+		<mapping class="com.annotation.inheritance.table_per_subclass.Wicked"/>
+		<mapping class="com.annotation.inheritance.table_per_subclass.Fighter"/>
 	</session-factory>
 </hibernate-configuration>

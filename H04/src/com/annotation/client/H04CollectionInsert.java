@@ -15,7 +15,7 @@ import com.annotation.util.HibernateUtil;
  * Client code to demonstrate persistence of domain class having Collection datatypes
  * @author bkar
  */
-public class H05CollectionInsert {
+public class H04CollectionInsert {
 	public static void main(String args[]) {
 		Transaction tx = null;
 		SessionFactory fact = null;
